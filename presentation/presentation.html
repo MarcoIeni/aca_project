@@ -168,19 +168,19 @@ It is enough the mosquitto broker used with its default configuration.
 .right-column[
 * written in python
 
-* the networking part relies on paho-mqtt and all the messages sent and received are saved in a log file.
+* the networking part depends on the library paho-mqtt and all the messages sent and received are saved in a log file.
 
-* it saves the states and the goals that the receivers signal to him, so before sending something it checks its validity
+* it saves the states and the goals that the receivers signal to him, so before sending something it checks its validity.
 
 * it has a shell based on the cmd library, that implements the following commands:
 
-  - info: get info about a single receiver using his hostname
+  - info: get info about a single receiver using his hostname.
 
-  - list: get info about all the receivers
+  - list: get info about all the receivers.
 
-  - set_goal: change the value of a goal in a receiver
+  - set_goal: change the value of a goal in a receiver.
 
-  - set_state: change the active state in a receiver
+  - set_state: change the active state in a receiver.
 ]
 ---
 .left-column[
@@ -191,11 +191,18 @@ It is enough the mosquitto broker used with its default configuration.
 .right-column[
 * written in C++
 
-* the networking part relies on paho-mqtt
+* the networking part depends on the library paho-mqtt.
 
 * it interacts with the mARGOt library to modify the objective function of the adaptive application.
 
-* it is characterized by the following hierarchical structure: hostname/pid/app/block
+* it is characterized by the following hierarchical structure: hostname/pid/app/block.
+
+* The receiver project is divided in three parts:
+  - mqtt_receiver: the core library that you can integrate in you mARGOt adaptive app.
+
+  - gs_list: a wrapper library that tells to the mqtt_receiver what goals and states are declared.
+
+  - margot: this is an example on how to integrate the mqtt_receiver library in a mARGOt adaptive application.
 ]
 ---
 template: inverse
@@ -264,12 +271,12 @@ sequenceDiagram
 What if the sender is not yet up (or is not yet registered to the topic "client/#") when the receiver wants to register a goal or a state?
 ---
 ## Disconnection
-* When a receiver is disconnected, it publish a message on the topic "client/disconnect/hostname".
+* When a receiver is disconnected, it publishes a message on the topic "client/disconnect/hostname".
 
 * The same topic is set as Last Will Topic. In this way, when the broker detects that a receiver is not active anymore, it sends the
 disconnect message to the sender.
 
-* Therefore, even in the case of an hard disconnection, the sender can detect that a receiver is no more
+* Therefore, even in the case of a hard disconnection, the sender can detect that a receiver is no more
 active and so, it will allow to send messages only to the receiver that are currently active.
 ---
 ## Retained Messages
