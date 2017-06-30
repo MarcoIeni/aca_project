@@ -19,7 +19,7 @@ $ python shell.py
 ### Receiver
 
 #### GSList
-The GS list lib does not depend on external libraries, just make sure to follow the C++11 ISO language standard when you compile it [-std=c++11]
+The GS list lib does not depend on external libraries, just make sure to follow the C++11 ISO language standard when you compile it [-std=c++11].
 
 #### MQTTReceiver
 The MqttReceiver depends on the following libraries:
@@ -29,10 +29,10 @@ The MqttReceiver depends on the following libraries:
 * [margot_asrtm](https://gitlab.com/margot_project/core/tree/master/framework/asrtm)
 * [margot_monitor](https://gitlab.com/margot_project/core/tree/master/framework/monitor)
 
-You can include them in this order.
+You can include them in this order. Also, make sure to follow the C++11 ISO language standard when you compile it [-std=c++11].
 
 #### mARGOt example
-The `code/receiver/margot` folder contains some files that you have to substitute to the ones contained in the [tutorial](https://gitlab.com/margot_project/tutorial) of the mARGOt project.
+The `code/receiver/margot` directory contains some files that you have to substitute to the ones contained in the [tutorial](https://gitlab.com/margot_project/tutorial) of the [mARGOt project](https://gitlab.com/margot_project).
 
 So you have to substitute the `code/receiver/margot/config` directory with the [config directory](https://gitlab.com/margot_project/tutorial/tree/master/config) of the tutorial and the `code/receiver/margot/src/main.cpp` file with the [main file](https://gitlab.com/margot_project/tutorial/blob/master/src/main.cpp) of the tutorial.
 
@@ -42,3 +42,5 @@ After you do this, you have to edit the [CMake file](https://gitlab.com/margot_p
 * [paho.mqtt.cpp](https://github.com/eclipse/paho.mqtt.cpp)
 
 You can include them in this order.
+
+After that, follow the [tutorial instructions](https://gitlab.com/margot_project/tutorial/blob/master/README.md) to correctly execute the example.
