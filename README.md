@@ -1,7 +1,7 @@
 # Advanced Computer Architectures Project
 Project for Advanced Computer Architecture course of M.Sc. Computer Science and Engineering at Politecnico di Milano. It consists in using MQTT to modify extra-functional requirements in adaptive application.
 
-Make sure to read the presentation first. To do it you can download the `presentation` directory and open the `presentation/presentation.html` file in your browser or simply click [here](http://htmlpreview.github.io/?https://github.com/MarcoIeni/aca_project/blob/master/presentation/presentation.html)
+Make sure to read the presentation first. To do it you can download the `presentation` directory and open the `presentation/presentation.html` file in your browser or simply click [here](https://cdn.rawgit.com/MarcoIeni/aca_project/1c7f50f7/presentation/presentation.html)
 
 ## Installation
 
