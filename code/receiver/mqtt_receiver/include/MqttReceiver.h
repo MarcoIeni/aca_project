@@ -1,6 +1,8 @@
 #ifndef MQTTRECEIVER_H
 #define MQTTRECEIVER_H
 
+#include <margot.hpp>
+
 namespace mqttreceiver
 {
 
@@ -29,6 +31,7 @@ public:
     void addState(State state);
     void start();
     bool isValid(std::string stateName, std::string stateValue);
+    std::map<std::string,margot::goal_t*> goals;
 
 protected:
 

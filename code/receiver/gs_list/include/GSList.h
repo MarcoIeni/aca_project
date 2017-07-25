@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <margot.hpp>
 
 // this is a wrapper that will tell the MqttReceiver to which states and goals to subscribe
 
@@ -12,11 +13,11 @@ namespace gslist
 class GSList
 {
     std::vector<std::string> states;
-    std::vector<std::string> goals;
+    std::map<std::string, margot::goal_t*> goals;
 
 public:
     GSList();
-    std::vector<std::string> getGoals();
+    std::map<std::string, margot::goal_t*> getGoals();
     std::vector<std::string> getStates();
 
 };

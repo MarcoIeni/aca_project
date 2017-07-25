@@ -127,18 +127,10 @@ class callback : public virtual mqtt::callback, public virtual mqtt::iaction_lis
     }
 
     // used when a goal is received
-    void onGoal(std::string goal, float value)
+    void onGoal(std::string goal_name, float value)
     {
-        std::cout << "onGoal: " << goal << " - " << std::to_string(value) << std::endl;
-        // TODO don't hard-code this
-        if (goal == "my_execution_time_goal")
-        {
-            margot::foo::goal::my_execution_time_goal.set(value);
-        }
-        else if (goal == "my_error_goal")
-        {
-            margot::foo::goal::my_error_goal.set(value);
-        }
+        std::cout << "onGoal: " << goal_name << " - " << std::to_string(value) << std::endl;
+        mr_.goals[goal_name]->set(value);
     }
 
     // used when a goal is received
@@ -313,10 +305,10 @@ void MqttReceiver::start()
     mqttreceiver::State *state = new mqttreceiver::State("my_state", states);
     addState(*state);
 
-    std::vector<std::string> goals = gslist.getGoals();
+    goals = gslist.getGoals();
     for(auto elem : goals)
     {
-        addGoal(elem);
+        addGoal(elem.first);
     }
 
 }
