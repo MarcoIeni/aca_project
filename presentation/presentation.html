@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="keywords" content="remark,remarkjs,markdown,slideshow,presentation" />
     <meta name="description" content="A simple, in-browser, markdown-driven slideshow tool." />
-    <title>Remark</title>
+    <title>ACA project</title>
     <style>
       @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
       @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
@@ -198,7 +198,7 @@ It is enough the mosquitto broker used with its default configuration.
 * it is characterized by the following hierarchical structure: hostname/pid/app/block.
 
 * The receiver project is divided in three parts:
-  - mqtt_receiver: the core library that you can integrate in you mARGOt adaptive app.
+  - mqtt_receiver: the core library that you can integrate in your mARGOt adaptive app.
 
   - gs_list: a wrapper library that tells to the mqtt_receiver what goals and states are declared.
 
@@ -277,7 +277,7 @@ What if the sender is not yet up (or is not yet registered to the topic "client/
 disconnect message to the sender.
 
 * Therefore, even in the case of a hard disconnection, the sender can detect that a receiver is no more
-active and so, it will allow to send messages only to the receiver that are currently active.
+active and so, it will allow to send messages only to the receivers that are currently active.
 ---
 ## Retained Messages
 * What if a sender is connected to the system after that the receiver sends a goal or a state?
